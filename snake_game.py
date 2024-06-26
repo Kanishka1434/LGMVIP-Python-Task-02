@@ -9,15 +9,15 @@ high_score = 0
 # Creating Screen
 screen = turtle.Screen()
 screen.title("Snake Game 🐍")
-screen.bgcolor("#2F4F4F")
+screen.bgcolor("#2F4F4F")  # Dark Slate Gray background
 screen.setup(width=600, height=600)
 screen.tracer(0)
 
 # Creating Snake Head
 snake_head = turtle.Turtle()
 snake_head.speed(0)
-snake_head.shape("circle")
-snake_head.color("red")
+snake_head.shape("square")
+snake_head.color("#32CD32")  # Lime Green snake head
 snake_head.penup()
 snake_head.goto(0, 0)
 snake_head.direction = "stop"
@@ -25,7 +25,7 @@ snake_head.direction = "stop"
 # Creating Snake Food
 snake_food = turtle.Turtle()
 snake_food.shape("circle")
-snake_food.color("#FFA500")
+snake_food.color("#FFD700")  # Gold snake food
 snake_food.penup()
 snake_food.goto(0, 100)
 
@@ -116,10 +116,7 @@ while True:
         new_segment = turtle.Turtle()
         new_segment.speed(0)
         new_segment.shape("circle")
-        if len(segments) % 2  == 0:
-            new_segment.color("white")
-        else:
-            new_segment.color("red")
+        new_segment.color("#FF1493")  # Deep Pink segments
         new_segment.penup()
         segments.append(new_segment)
         delay -= 0.001
